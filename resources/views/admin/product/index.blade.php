@@ -6,14 +6,9 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0">All categories</h1>
+                        <h1 class="m-0">All products</h1>
                     </div>
                 </div>
-                @if(session('success'))
-                    <div class="alert alert-success" role="alert">
-                        <h4>{{ session('success') }}</h4>
-                    </div>
-                @endif
             </div>
         </div>
         <section class="content">
@@ -23,24 +18,34 @@
                         <thead>
                         <tr>
                             <th style="width: 1%">ID</th>
+                            <th style="width:30%">Title</th>
                             <th style="width:20%">Category</th>
+                            <th>Created date</th>
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach($category as $item)
+                        @foreach($product as $item)
                             <tr>
                                 <td>{{ $item->id }}</td>
-                                <td>{{ $item->name_of_category }}</td>
+                                <td>{{ $item->title }}</td>
+                                <td>{{ $item->category->name_of_category }}</td>
+                                {{--<td><img src="{{ asset('assets/uploads/product/'.$item->image) }}" height="100" width="100"></td>--}}
+                                <td>{{ $item->created_at }}</td>
                                 <td class="project-actions text-right">
-                                    <a class="btn btn-info btn-sm" href="{{ url('edit-category/'.$item->id) }}">
+                                    <a class="btn btn-primary btn-sm" href="#">
+                                        <i class="fas fa-folder">
+                                        </i>
+                                        View
+                                    </a>
+                                    <a class="btn btn-info btn-sm" href="{{ url('edit-prod/'.$item->id) }}">
                                         <i class="fas fa-pencil-alt">
                                         </i>
                                         Edit
                                     </a>
-                                    <form action="" method="post" style="display: inline-block">
+                                    <form action="#" method="post" style="display: inline-block">
                                         @csrf
                                         @method('DELETE')
-                                        <a class="btn btn-danger btn-sm delete-btn" href="{{ url('delete-category/'.$item->id) }}">
+                                        <a class="btn btn-danger btn-sm delete-btn" href="{{ url('delete-product/'.$item->id) }}">
                                             <i class="fas fa-trash">
                                             </i>
                                             Delete

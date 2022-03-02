@@ -135,13 +135,13 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="{{--{{ route('product.index') }}--}}" class="nav-link">
+                                <a href="{{ url('products') }}" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>All products</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="{{--{{ route('product.create') }}--}}" class="nav-link">
+                                <a href="{{ url('add-product') }}" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Add product</p>
                                 </a>
@@ -217,5 +217,11 @@
 <!-- Scripts -->
 <script src={{ asset('js/app.js') }}></script>
 <script src={{ asset('admin/js/add.js') }}></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+@if(session('status'))
+    <script>
+        swal("{{ session('status') }}");
+    </script>
+@endif
 </body>
 </html>

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\FrontendController;
+use App\Http\Controllers\Admin\ProductController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\CategoryController;
 
@@ -23,10 +24,23 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+//Admin
 Route::middleware(['auth', 'isAdmin'])->group(function(){
     Route::get('/dashboard', [FrontendController::class, 'index']);
 
+    //Category
     Route::get('categories', [CategoryController::class, 'index']);
     Route::get('add-category', [CategoryController::class, 'add']);
     Route::post('insert-category', [CategoryController::class, 'insert']);
+    Route::get('edit-category/{id}', [CategoryController::class, 'edit']);
+    Route::put('update-category/{id}', [CategoryController::class, 'update']);
+    Route::get('delete-category/{id}', [CategoryController::class, 'destroy']);
+
+    //Product
+    Route::get('products', [ProductController::class, 'index']);
+    Route::get('add-product', [ProductController::class, 'add']);
+    Route::post('insert-product', [ProductController::class, 'insert']);
+    Route::get('edit-prod/{id}', [ProductController::class, 'edit']);
+    Route::put('update-product/{id}', [ProductController::class, 'update']);
+    Route::get('delete-product/{id}', [ProductController::class, 'destroy']);
 });
