@@ -24,11 +24,6 @@ class HomeController extends Controller {
     public function index() {
         $featured_products = Product::all();
         $category = Category::all();
-        return view('user.home', compact('featured_products', 'category'));
+        return view('user/home', compact('featured_products','category'));
     }
-
-    /*public function cat(){
-        $category = Category::all();
-        return view('user.home', compact('category'));
-    }*/
 }

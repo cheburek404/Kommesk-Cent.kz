@@ -28,7 +28,9 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
-
+                        <li class="nav-item d-none d-sm-inline-block">
+                            <a href="{{ asset('/dashboard') }}" class="nav-link">Admin panel</a>
+                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->

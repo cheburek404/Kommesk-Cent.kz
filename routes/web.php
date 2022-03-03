@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\Admin\FrontendController;
 use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\HomeController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\CategoryController;
 
@@ -20,10 +22,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('category/{id}', [\App\Http\Controllers\FrontendController::class, 'viewcategory']);
+Route::get('product/{id}', [\App\Http\Controllers\FrontendController::class, 'productview']);
+
 Auth::routes();
 
-Route::get('/user/home', [App\Http\Controllers\HomeController::class, 'index'])->name('user.home');
-Route::get('category', [App\Http\Controllers\HomeController::class, 'category']);
+Route::get('/user/home', [HomeController::class, 'index']);
 
 //Admin
 Route::middleware(['auth', 'isAdmin'])->group(function(){

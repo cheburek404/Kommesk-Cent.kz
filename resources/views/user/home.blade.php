@@ -12,16 +12,6 @@
                                 <span class="hamburger-inner"></span>
                             </span>
                         </button>
-                        <div class="select-city" style="display:none;">
-                            <i class="icon-city"></i>
-                            <p>Выберите город</p>
-                            <ul class="dropdown-city">
-                                <li>Алматы</li>
-                                <li>Астана</li>
-                                <li>Павлодар</li>
-                                <li>Шымкент</li>
-                            </ul>
-                        </div>
                     </div>
                     <div class="header-buttons">
                         <button class="btn btn-feedback" id="gotofeedback">Обратная связь</button>
@@ -31,59 +21,20 @@
                 </div>
                 <div class="header-bottom">
                     <a class="logo" href="/"><img src="https://cent.kz/images/logo8.png"></a>
-                    {{--<ul class="menu">
-                        <li class="menu-item"><a href="#"><i class="icon-basket"></i>
-                                <p>Корзина</p>
-                            </a></li>
-                        <li class="menu-item"><a href="#"><i class="icon-hearth"></i>
-                                <p>Избранное</p>
-                            </a></li>
-                        <li class="menu-item"><a href="#"><i class="icon-user"></i>
-                                <p>Личный кабинет</p>
-                            </a></li>
-                        <li class="menu-item"><a href="#"><i class="icon-settings"></i>
-                                <p>Настройки</p>
-                            </a>
-                        </li>
-                    </ul>--}}
-                </div> <br><div class="banner-slider">
+                </div> <br>
+                <div class="banner-slider">
                     <a href="/"><img src="https://cent.kz/images/banner8__.png" alt="" style="border-radius:15px;" id="banner_1"></a>
                     <a href="/"><img src="https://cent.kz/images/banner82.png" alt="" style="border-radius:15px;" id="banner_2"></a>
                 </div>
 
                 <div class="menu-bottom">
                     <ul class="bottom-menu">
+                        <li class="bottom-menu_item"><a href="{{ url('user/home') }}">All</a></li>
                         @foreach($category as $cat)
-                            <li class="bottom-menu_item catlink"><a href="" class="catlink active ">{{ $cat->name_of_category }}</a></li>
+                            <li class="bottom-menu_item"><a href="{{ url('category/'.$cat->id) }}">{{ $cat->name_of_category }}</a></li>
                         @endforeach
-                        {{--<li class="bottom-menu_item catlink active" id="cat0"><a href="javascript:void(0)" class="catlink active " onclick="changecat(0, &quot;&quot;)">Все </a></li><li class="bottom-menu_item catlink " id="cat1"><a href="javascript:void(0)" onclick="changecat(1, &quot;&quot;)">Авто</a></li>
-                        <li class="bottom-menu_item catlink " id="cat2"><a href="javascript:void(0)" onclick="changecat(2, &quot;&quot;)">Здоровье</a></li>
-                        <li class="bottom-menu_item catlink " id="cat3"><a href="javascript:void(0)" onclick="changecat(3, &quot;&quot;)">Дом</a></li>
-                        <li class="bottom-menu_item catlink " id="cat4"><a href="javascript:void(0)" onclick="changecat(4, &quot;&quot;)">Туризм</a></li>
-                        <li class="bottom-menu_item catlink " id="cat5"><a href="javascript:void(0)" onclick="changecat(5, &quot;&quot;)">8 марта</a></li>--}}
-                        {{--<li class="bottom-menu_item mobile"><a href="#">Корзина</a></li>
-                        <li class="bottom-menu_item mobile"><a href="#">Избранное</a></li>
-                        <li class="bottom-menu_item mobile"><a href="#">Личный кабинет</a></li>
-                        <li class="bottom-menu_item mobile"><a href="#">Настройки</a></li>--}}
                     </ul>
-                    {{--<div class="header-search">
-                        <input required="" min="1" type="text" class="search-input" id="search" name="search">
-                        <label><i class="icon-search"></i>Поиск...</label>
-                        <button type="submit" class="search-btn">Найти</button>
-                    </div>--}}
                 </div>
-                {{--<div class="burger-content">
-                    <div class="close-burger">×</div>
-                    <ul>
-                        <li><a href="#">Меню 1</a></li>
-                        <li><a href="#">Меню 2</a></li>
-                        <li><a href="#">Меню 3</a></li>
-                        <li><a href="#">Меню 4</a></li>
-                        <li><a href="#">Меню 5</a></li>
-                        <li><a href="#">Помощь</a></li>
-                        <li><a href="#">Обратная связь</a></li>
-                    </ul>
-                </div>--}}
             </header>
         </div>
     </div>
@@ -96,7 +47,7 @@
                             @foreach($featured_products as $prod)
                             <div class="catalog-item">
                                 <div class="catalog-item_top">
-                                    <a href="/show/101">
+                                    <a href="{{ url('product/'.$prod->id) }}">
                                         <img src="{{ asset('assets/uploads/product/'.$prod->image) }}" alt="Product image">
                                     </a>
                                 </div>
