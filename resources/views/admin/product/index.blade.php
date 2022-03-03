@@ -28,29 +28,22 @@
                             <tr>
                                 <td>{{ $item->id }}</td>
                                 <td>{{ $item->title }}</td>
-                                <td>{{ $item->category->name_of_category }}</td>
+                                <td>{{ $item->cat->name_of_category }}</td>
                                 {{--<td><img src="{{ asset('assets/uploads/product/'.$item->image) }}" height="100" width="100"></td>--}}
                                 <td>{{ $item->created_at }}</td>
                                 <td class="project-actions text-right">
-                                    <a class="btn btn-primary btn-sm" href="#">
+                                    <a class="btn btn-primary btn-sm" href="{{ url('show-product/'.$item->id) }}">
                                         <i class="fas fa-folder">
-                                        </i>
-                                        View
+                                        </i> View
                                     </a>
-                                    <a class="btn btn-info btn-sm" href="{{ url('edit-prod/'.$item->id) }}">
+                                    <a class="btn btn-info btn-sm" href="{{ url('edit-product/'.$item->id) }}">
                                         <i class="fas fa-pencil-alt">
-                                        </i>
-                                        Edit
+                                        </i> Edit
                                     </a>
-                                    <form action="#" method="post" style="display: inline-block">
-                                        @csrf
-                                        @method('DELETE')
-                                        <a class="btn btn-danger btn-sm delete-btn" href="{{ url('delete-product/'.$item->id) }}">
-                                            <i class="fas fa-trash">
-                                            </i>
-                                            Delete
-                                        </a>
-                                    </form>
+                                    <a class="btn btn-danger btn-sm delete-btn" href="{{ url('delete-product/'.$item->id) }}">
+                                        <i class="fas fa-trash">
+                                        </i> Delete
+                                    </a>
                                 </td>
                             </tr>
                         @endforeach

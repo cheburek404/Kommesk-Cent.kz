@@ -37,7 +37,7 @@
                 <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
             </li>
             <li class="nav-item d-none d-sm-inline-block">
-                <a href="/home" class="nav-link">Home</a>
+                <a href="{{ asset('user/home') }}" class="nav-link">User page</a>
             </li>
             <li class="nav-item d-none d-sm-inline-block">
                 <a href="#" class="nav-link">Contact</a>
@@ -176,8 +176,12 @@
         </div>
     </aside>
     @yield('content')
-</div>
-
+    <footer class="main-footer">
+        <div class="copy-meta">
+            <strong>&copy; <script>document.write(new Date().getFullYear())</script>
+            &middot; <a href="{{ url('https://cent.kz/') }}">Cent.kz</a>.</strong> All rights reserved.
+        </div>
+    </footer>
 </div>
 
 <!-- jQuery -->

@@ -34,18 +34,12 @@
                                 <td class="project-actions text-right">
                                     <a class="btn btn-info btn-sm" href="{{ url('edit-category/'.$item->id) }}">
                                         <i class="fas fa-pencil-alt">
-                                        </i>
-                                        Edit
+                                        </i> Edit
                                     </a>
-                                    <form action="" method="post" style="display: inline-block">
-                                        @csrf
-                                        @method('DELETE')
-                                        <a class="btn btn-danger btn-sm delete-btn" href="{{ url('delete-category/'.$item->id) }}">
-                                            <i class="fas fa-trash">
-                                            </i>
-                                            Delete
-                                        </a>
-                                    </form>
+                                    <a class="btn btn-danger btn-sm delete-btn" href="{{ url('delete-category/'.$item->id) }}">
+                                        <i class="fas fa-trash">
+                                        </i> Delete
+                                    </a>
                                 </td>
                             </tr>
                         @endforeach

@@ -64,7 +64,6 @@ class ProductController extends Controller {
         $product->subtitle = $request->input('subtitle');
         $product->pre_description = $request->input('pre_description');
         $product->price = $request->input('price');
-        $product->category = $request->input('category');
         $product->description = $request->input('description');
         $product->update();
 
@@ -73,13 +72,16 @@ class ProductController extends Controller {
 
     public function destroy($id){
         $product = Product::find($id);
-        if ($product->image){
-            $path = 'assets/uploads/product/'.$product->image;
-            if (Storage::exists($path)){
-                Storage::delete($path);
-            }
+        $path = 'assets/uploads/product/'.$product->image;
+        if (Storage::exists($path)){
+            Storage::delete($path);
         }
         $product->delete();
         return redirect('products')->with('status', "Product deleted successfully!");
+    }
+
+    public function show($id){
+        $product = Product::find($id);
+        return view('admin.product.show', compact('product'));
     }
 }

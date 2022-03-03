@@ -42,10 +42,8 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Categories</label>
-                                    <select class="form-control" name="category">
-                                        @foreach ($category as $item)
-                                            <option value="{{ $item->id }}">{{ $item->name_of_category }}</option>
-                                        @endforeach
+                                    <select class="form-control">
+                                        <option value="{{ $product->category }}">{{ $product->cat->name_of_category }}</option>
                                     </select>
                                 </div>
                                 @if($product->image)
