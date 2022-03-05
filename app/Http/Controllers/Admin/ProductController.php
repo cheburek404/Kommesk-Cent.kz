@@ -51,9 +51,9 @@ class   ProductController extends Controller {
 
     public function update(Request $request, $id){
         $product = Product::find($id);
-        if ($request->hasFile('image')) {
+        if ($request->hasFile('image')){
             $path = 'assets/uploads/product/'.$product->image;
-            if (Storage::exists($path)) {
+            if (Storage::exists($path)){
                 Storage::delete($path);
             }
             $file = $request->file('image');
