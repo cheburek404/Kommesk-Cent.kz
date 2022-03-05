@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\FrontendController;
+use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Auth;
@@ -23,7 +24,8 @@ Route::get('/', function () {
 });
 
 Route::get('category/{id}', [\App\Http\Controllers\FrontendController::class, 'viewcategory']);
-Route::get('product/{id}', [\App\Http\Controllers\FrontendController::class, 'productview']);
+Route::get('show/{id}', [\App\Http\Controllers\FrontendController::class, 'productview']);
+Route::get('order/{id}', [\App\Http\Controllers\FrontendController::class, 'orderproduct']);
 
 Auth::routes();
 
@@ -49,4 +51,10 @@ Route::middleware(['auth', 'isAdmin'])->group(function(){
     Route::put('update-product/{id}', [ProductController::class, 'update']);
     Route::get('delete-product/{id}', [ProductController::class, 'destroy']);
     Route::get('show-product/{id}', [ProductController::class, 'show']);
+
+    //Order
+    Route::get('orders', [OrderController::class, 'index']);
+    Route::get('add-order', [OrderController::class, 'add']);
+    Route::post('insert-order', [OrderController::class, 'insert']);
+
 });

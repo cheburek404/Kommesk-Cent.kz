@@ -40,7 +40,7 @@
                 <a href="{{ asset('user/home') }}" class="nav-link">User page</a>
             </li>
             <li class="nav-item d-none d-sm-inline-block">
-                <a href="#" class="nav-link">Contact</a>
+                <a href="#" class="nav-link">Создать подкатегории для инпут ордер</a>
             </li>
         </ul>
 
@@ -171,6 +171,29 @@
                             </li>
                         </ul>
                     </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fas fa-thumbtack"></i>
+                            <p>
+                                Orders input
+                                <i class="fas fa-angle-left right"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{ url('orders') }}" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>All orders</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ url('add-order') }}" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Add order</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
             </nav>
         </div>
@@ -222,6 +245,7 @@
 <script src={{ asset('js/app.js') }}></script>
 <script src={{ asset('admin/js/add.js') }}></script>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 @if(session('status'))
     <script>
         swal("{{ session('status') }}");

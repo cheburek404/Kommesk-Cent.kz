@@ -4,15 +4,17 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
+use App\Models\Order;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
-class ProductController extends Controller {
+class   ProductController extends Controller {
     public function index(){
         $product = Product::all();
         $category = Category::all();
-        return view('admin.product.index', compact('product', 'category'));
+        $order = Order::all();
+        return view('admin.product.index', compact('product', 'category','order'));
     }
 
     public function add(){
@@ -49,9 +51,9 @@ class ProductController extends Controller {
 
     public function update(Request $request, $id){
         $product = Product::find($id);
-        if ($request->hasFile('image')){
+        if ($request->hasFile('image')) {
             $path = 'assets/uploads/product/'.$product->image;
-            if (Storage::exists($path)){
+            if (Storage::exists($path)) {
                 Storage::delete($path);
             }
             $file = $request->file('image');

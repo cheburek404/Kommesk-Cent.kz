@@ -43,7 +43,11 @@
                                 <div class="form-group">
                                     <label>Categories</label>
                                     <select class="form-control">
-                                        <option value="{{ $product->category }}">{{ $product->cat->name_of_category }}</option>
+                                        {{--@foreach($category as $cat)
+                                            <option value="{{ $cat->id }}" @if ($cat->id == $product->category) selected
+                                                @endif>{{ $cat->name_of_category }}</option>
+                                        @endforeach--}}
+                                        <option value={{ $product->id }}>{{ $product->cat->name_of_category }}</option>
                                     </select>
                                 </div>
                                 @if($product->image)

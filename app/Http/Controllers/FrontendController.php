@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Order;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
@@ -23,5 +24,11 @@ class FrontendController extends Controller {
     public function productview($id){
         $product = Product::find($id);
         return view('user/show', compact('product'));
+    }
+
+    public function orderproduct($id){
+        $product = Product::find($id);
+        $order = Order::all();
+        return view('user/order', compact('product', 'order'));
     }
 }
