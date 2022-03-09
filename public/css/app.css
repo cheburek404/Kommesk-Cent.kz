@@ -387,6 +387,11 @@ ul {
     display: block;
 }
 
+.price{
+    color: #333333;
+    font-size: 20px;
+}
+
 .tab-item_descr {
     font-size: 15px;
     color: #333333;
@@ -961,6 +966,7 @@ ul {
     margin-top: 50px;
     color: #333333;
     font-size: 20px;
+    white-space: pre-line;
 }
 .item-content_tabs {
     margin-top: 50px;
@@ -1992,9 +1998,12 @@ ul {
 .inp-order{
     width: 25%; }
 
+.up{
+    margin-top: -28px;
+    float: right; }
 .up .nav-link{
     margin-left: 25px;
-    margin-top: -4.5px;
+    float: right;
     color: #333333;
     font-size: 18px; }
 .up .nav-link:hover {

@@ -15,7 +15,7 @@ class FrontendController extends Controller {
         if($category){
             $lastProducts->where('category',$category);
         }
-        return view('user/home',[
+        return view('user.home',[
             'featured_products'=>$lastProducts->get(),
             'category'=>$categories
         ]);

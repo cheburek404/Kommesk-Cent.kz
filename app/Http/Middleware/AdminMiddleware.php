@@ -20,11 +20,11 @@ class AdminMiddleware {
                 return $next($request);
             }
             else  {
-                return redirect('/user/home')->with('status','Access Denied! as you are not as admin');
+                return redirect('/')->with('status','Access Denied! as you are not as admin');
             }
         }
         else  {
-            return redirect('/user/home')->with('status','Please Login First');
+            return redirect('/')->with('status','Please Login First');
         }
     }
 }

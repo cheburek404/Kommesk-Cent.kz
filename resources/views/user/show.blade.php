@@ -16,9 +16,8 @@
                     <img src="{{ asset('assets/uploads/product/'.$product->image) }}" alt="Image" class="item-inside_img">
                     <div class="item-inside_content ">
                         <h1>{{ $product->title }}</h1>
-                        <p>{{ $product->pre_description }}</p>
-                        <div class="topdesc">
-                            <p class="price">Стоимость: {{ $product->price }} тг.<p>
+                        <p class="item-inside_descr">{{ $product->pre_description }}</p>
+                        <div class="topdesc"><br>
                             <div class="counts">
                                 <span class="count-minus">-</span>
                                 <span type="text" name="quantity" class="count-total" id="totalq">1</span>
@@ -33,7 +32,7 @@
                     </div>
                 </div>
                 <div class="item-inside_descr">
-                    {{ $product->description }}
+                    {!! $product->description !!}
                 </div>
             </div>
         </div>

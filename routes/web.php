@@ -19,17 +19,12 @@ use App\Http\Controllers\Admin\CategoryController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
+Route::get('/', [HomeController::class, 'index'])->name('user.home');
 Route::get('category/{id}', [\App\Http\Controllers\FrontendController::class, 'viewcategory']);
 Route::get('show/{id}', [\App\Http\Controllers\FrontendController::class, 'productview']);
 Route::get('order/{id}', [\App\Http\Controllers\FrontendController::class, 'orderproduct']);
 
 Auth::routes();
-
-Route::get('/user/home', [HomeController::class, 'index']);
 
 //Admin
 Route::middleware(['auth', 'isAdmin'])->group(function(){
