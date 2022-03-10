@@ -33,6 +33,16 @@
                     </a>
 
                     <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                        <a href="#" class="dropdown-item">
+                            {{ __('Profile') }}
+                        </a>
+                        <a href="#" class="dropdown-item">
+                            {{ __('Settings') }}
+                        </a>
+                        <a href="#" class="dropdown-item">
+                            {{ __('Services') }}
+                        </a>
+                        <hr>
                         <a class="dropdown-item" href="{{ route('logout') }}"
                            onclick="event.preventDefault();
                            document.getElementById('logout-form').submit();">

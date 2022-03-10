@@ -85,4 +85,9 @@ class   ProductController extends Controller {
         $product = Product::find($id);
         return view('admin.product.show', compact('product'));
     }
+
+    public function deletePopup($id){
+        $product = Product::find($id);
+        return view('admin.product.delete', compact('product'));
+    }
 }

@@ -1869,6 +1869,7 @@ ul {
     padding: 0.25rem 1rem;
     clear: both;
     font-weight: 400;
+    font-size: 16px;
     color: #212529;
     text-align: inherit;
     text-decoration: none;
@@ -2221,6 +2222,7 @@ body {
 
 .back{
     background: #947770;
+    transition-duration: 0.5s;
     margin-left: 30px;
     border-radius: 5px;
     color: #fff;
@@ -2233,3 +2235,8 @@ body {
 .back:hover{
     background: #CCBAB6;
     color: #666 }
+
+
+.modal-footer .btn{
+    float: left;
+}

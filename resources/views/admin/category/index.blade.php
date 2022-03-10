@@ -36,7 +36,8 @@
                                         <i class="fas fa-pencil-alt">
                                         </i> Edit
                                     </a>
-                                    <a class="btn btn-danger btn-sm delete-btn" href="{{ url('delete-category/'.$item->id) }}">
+                                    {{--<a class="btn btn-danger btn-sm delete-btn" href="{{ url('delete-category/'.$item->id) }}">--}}
+                                    <a class="btn btn-danger btn-sm delete-btn" data-toggle="modal" id="smallButton" data-attr="{{ route('delete', $item->id) }}" title="Delete Project">
                                         <i class="fas fa-trash">
                                         </i> Delete
                                     </a>
@@ -45,6 +46,15 @@
                         @endforeach
                         </tbody>
                     </table>
+                    <div class="modal fade" id="smallModal" tabindex="-1" role="dialog" aria-labelledby="smallModalLabel" aria-hidden="true"  style="border-radius: 10px">
+                        <div class="modal-dialog modal-sm" role="document">
+                            <div class="modal-content">
+                                <div class="modal-body" id="smallBody">
+                                    <!-- the result to be displayed apply here -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>

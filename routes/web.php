@@ -37,6 +37,7 @@ Route::middleware(['auth', 'isAdmin'])->group(function(){
     Route::get('edit-category/{id}', [CategoryController::class, 'edit']);
     Route::put('update-category/{id}', [CategoryController::class, 'update']);
     Route::get('delete-category/{id}', [CategoryController::class, 'destroy']);
+    Route::get('deletePopup/{id}', [CategoryController::class, 'deletePopup'])->name('delete');
 
     //Product
     Route::get('products', [ProductController::class, 'index']);
@@ -46,6 +47,7 @@ Route::middleware(['auth', 'isAdmin'])->group(function(){
     Route::put('update-product/{id}', [ProductController::class, 'update']);
     Route::get('delete-product/{id}', [ProductController::class, 'destroy']);
     Route::get('show-product/{id}', [ProductController::class, 'show']);
+    Route::get('deletePopup/{id}', [ProductController::class, 'deletePopup'])->name('delete');
 
     //Order
     Route::get('orders', [OrderController::class, 'index']);

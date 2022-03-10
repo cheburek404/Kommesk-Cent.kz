@@ -42,4 +42,9 @@ class CategoryController extends Controller {
         $category->delete();
         return redirect('categories')->with('status', "Category deleted successfully!");
     }
+
+    public function deletePopup($id){
+        $category = Category::find($id);
+        return view('admin.category.delete', compact('category'));
+    }
 }
