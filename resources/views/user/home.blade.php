@@ -13,7 +13,7 @@
 
                 <div class="menu-bottom">
                     <ul class="bottom-menu">
-                        <li class="bottom-menu_item"><a href="{{ url('user/home') }}">All</a></li>
+                        <li class="bottom-menu_item"><a href="{{ url('/') }}">All</a></li>
                         @foreach($category as $cat)
                             <li class="bottom-menu_item"><a href="{{ url('category/'.$cat->id) }}">{{ $cat->name_of_category }}</a></li>
                         @endforeach

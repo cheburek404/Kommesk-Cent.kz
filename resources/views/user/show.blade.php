@@ -11,7 +11,7 @@
     <section class="item-page">
         <div class="container">
             <div class="item-inside">
-                <a href="{{ url('user/home') }}">Назад</a><br><br>
+                <a href="{{ url('/') }}">Назад</a><br><br>
                 <div class="item_top">
                     <img src="{{ asset('assets/uploads/product/'.$product->image) }}" alt="Image" class="item-inside_img">
                     <div class="item-inside_content ">
