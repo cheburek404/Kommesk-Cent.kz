@@ -14,10 +14,10 @@
                 <a href="{{ url('/') }}">Назад</a><br><br>
                 <div class="item_top">
                     <img src="{{ asset('assets/uploads/product/'.$product->image) }}" alt="Image" class="item-inside_img">
-                    <div class="item-inside_content ">
+                    <div class="item-inside_content">
                         <h1>{{ $product->title }}</h1>
                         <p class="item-inside_descr">{{ $product->pre_description }}</p>
-                        <div class="topdesc"><br>
+                        <div class="topdesc">
                             <div class="counts">
                                 <span class="count-minus">-</span>
                                 <span type="text" name="quantity" class="count-total" id="totalq">1</span>
@@ -25,7 +25,6 @@
                             </div>
                             <br>
                             <span class="price">Итого: <span id="totalp">{{ $product->price }}</span> тг.</span>
-
                             <br><br>
                             <a class="btn btn-info" href="{{ url('order/'.$product->id) }}">Заказать</a>
                         </div>

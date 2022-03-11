@@ -95,13 +95,15 @@
         <!-- Sidebar -->
         <div class="sidebar">
             <!-- Sidebar user panel (optional) -->
-            <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-                <div class="image">
-                    <img src="https://64.media.tumblr.com/1794f184586bae927b1eab4efc8a7020/297b10b53641e5b9-88/s1280x1920/31586793d419e0c1ad932c0ef1f07c5e92d1f17f.jpg" class="img-circle elevation-2" alt="User Image">
-                </div>
-                <div class="info">
+            <div class="user-panel mt-3 pb-3 mb-3 flex-column">
+                <a class="nav-link ml-2">
+                    <i class="nav-icon fa fa-user-lock"></i>
+                    <p>{{ Auth::user()->name }}</p>
+                    {{--<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKUV7TY0Om0uJ4r5W5tuKVNiZgnfmm4RoRYA&usqp=CAU" class="img-circle elevation-2" alt="User Image">--}}
+                </a>
+                {{--<div class="info">
                     <a href="#" class="d-block">{{ Auth::user()->name }}</a>
-                </div>
+                </div>--}}
             </div>
 
             <!-- Sidebar Menu -->

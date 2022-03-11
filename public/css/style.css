@@ -157,3 +157,8 @@
 .small-box-footer{
     border-bottom-left-radius: 1em;
     border-bottom-right-radius: 1em; }
+
+.user-panel p{
+    float: right;
+    margin-right: 125px;
+}

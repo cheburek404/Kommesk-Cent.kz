@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+{{--<div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -42,6 +42,31 @@
                 </div>
             </div>
         </div>
+    </div>
+</div>--}}
+
+
+<div class="login">
+    <div class="form">
+        <h2><img src="https://cent.kz/images/logo8.png" alt="logo"></h2>
+        <form method="POST" action="{{ route('password.email') }}">
+            @csrf
+            <div class="form-field">
+                <label for="login-mail"><i class="fa fa-envelope"></i></label>
+                <input id="email" type="email" class="@error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="Email">
+            </div>
+            <button type="submit" class="button">
+                <div class="arrow-wrapper">
+                    <span class="arrow"></span>
+                </div>
+                <p class="button-text">Send Password Reset Link</p>
+            </button>
+            <div class="row mb-4">
+                <div class="col-md-12 offset-6">
+                    <a href="{{ route('login') }}" class="back btn-info">Back to login page</a>
+                </div>
+            </div>
+        </form>
     </div>
 </div>
 @endsection

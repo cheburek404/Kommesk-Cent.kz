@@ -59,7 +59,7 @@ $(document).on('click', '.delete-btn', function(event) {
         }
         , error: function(jqXHR, testStatus, error) {
             console.log(error);
-            alert("Page " + href + " cannot open. Error:" + error);
+            alert("Page " + href + " cannot open. Error: " + error);
             $('#loader').hide();
         }
         , timeout: 8000

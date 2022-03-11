@@ -76,11 +76,11 @@
         <form method="POST" action="{{ route('login') }}">
             @csrf
             <div class="form-field">
-                <label for="login-mail"><i class="fa fa-user"></i></label>
+                <label for="login-mail"><i class="fas fa-user"></i></label>
                 <input id="email" type="email" class="@error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="Email">
             </div>
             <div class="form-field">
-                <label for="login-password"><i class="fa fa-lock"></i></label>
+                <label for="login-password"><i class="fas fa-lock"></i></label>
                 <input id="password" type="password" class="@error('password') is-invalid @enderror" name="password" required autocomplete="current-password" placeholder="Password">
             </div>
             <div class="row mb-4">
@@ -108,7 +108,7 @@
             <div class="row mb-4">
                 <div class="col-md-12 offset-md-0">
                     <a href="{{ route('register') }}" class="acc button btn-link">Still no account?</a>
-                    <a href="{{ route('user.home') }}" class="back btn-info">Back to main page</a>
+                    <a href="{{ route('user.home') }}" class="back chch btn-info">Back to main page</a>
                 </div>
             </div>
         </form>

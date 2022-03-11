@@ -5,7 +5,7 @@
                 <span class="hamburger-inner"></span>
             </span>
         </button>
-        @if(Auth::check    ('isAdmin'))
+        @if(Auth::check() && Auth::user()->isAdmin())
             <ul class="button navbar-nav me-auto up">
                 <li class="nav-item d-none d-sm-inline-block">
                     <a href="{{ asset('/dashboard') }}" class="nav-link">Admin panel</a>

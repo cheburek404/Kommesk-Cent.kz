@@ -22,8 +22,4 @@ class Product extends Model {
     public function cat() {
         return $this->belongsTo(Category::class, 'category', 'id');
     }
-
-    /*public function order(){
-        return $this->belongsTo(Order::class, '');
-    }*/
 }
