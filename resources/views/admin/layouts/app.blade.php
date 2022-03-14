@@ -39,9 +39,11 @@
             <li class="nav-item d-none d-sm-inline-block">
                 <a href="{{ asset('/') }}" class="nav-link">User page</a>
             </li>
-            <li class="nav-item d-none d-sm-inline-block">
-                <a href="#" class="nav-link">Создать подкатегории для инпут ордер</a>
-            </li>
+            @if(Auth::check() && Auth::user()->role_as == 'super_admin')
+                <li class="nav-item d-none d-sm-inline-block">
+                    <a href="{{ asset('access') }}" class="nav-link">Access for admins</a>
+                </li>
+            @endif
         </ul>
 
         <!-- Right navbar links -->
@@ -101,9 +103,6 @@
                     <p>{{ Auth::user()->name }}</p>
                     {{--<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKUV7TY0Om0uJ4r5W5tuKVNiZgnfmm4RoRYA&usqp=CAU" class="img-circle elevation-2" alt="User Image">--}}
                 </a>
-                {{--<div class="info">
-                    <a href="#" class="d-block">{{ Auth::user()->name }}</a>
-                </div>--}}
             </div>
 
             <!-- Sidebar Menu -->

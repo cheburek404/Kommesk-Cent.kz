@@ -54,4 +54,10 @@ Route::middleware(['auth', 'isAdmin'])->group(function(){
     Route::get('add-order', [OrderController::class, 'add']);
     Route::post('insert-order', [OrderController::class, 'insert']);
 
+    //Access for admins
+    Route::get('access', [FrontendController::class, 'indexForAccess']);
+    Route::get('search', [FrontendController::class, 'searchByEmail']);
+    Route::get('give-access/{id}', [FrontendController::class, 'giveAccessForAdmin']);
+    Route::put('change-role/{id}', [FrontendController::class, 'changeRole']);
+
 });

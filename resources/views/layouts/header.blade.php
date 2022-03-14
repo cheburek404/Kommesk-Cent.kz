@@ -5,7 +5,13 @@
                 <span class="hamburger-inner"></span>
             </span>
         </button>
-        @if(Auth::check() && Auth::user()->isAdmin())
+        @if(Auth::check() && Auth::user()->role_as == 'super_admin')
+            <ul class="button navbar-nav me-auto up">
+                <li class="nav-item d-none d-sm-inline-block">
+                    <a href="{{ asset('/dashboard') }}" class="nav-link">Admin panel</a>
+                </li>
+            </ul>
+        @elseif(Auth::check() && Auth::user()->role_as == 'admin')
             <ul class="button navbar-nav me-auto up">
                 <li class="nav-item d-none d-sm-inline-block">
                     <a href="{{ asset('/dashboard') }}" class="nav-link">Admin panel</a>

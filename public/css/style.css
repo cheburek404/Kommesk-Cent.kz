@@ -11,7 +11,6 @@
     pointer-events: none;
     cursor: default; }
 
-
 .dropdown-toggle {
     white-space: nowrap; }
 .dropdown-toggle::after {
@@ -25,7 +24,6 @@
     border-left: 0.3em solid transparent; }
 .dropdown-toggle:empty::after {
     margin-left: 0; }
-
 
 .dropdown-menu {
     position: absolute;
@@ -57,9 +55,7 @@
     right: 0;
     left: auto; }
 .dropdown-menu hr{
-    margin: 4px;
-}
-
+    margin: 4px; }
 
 .dropdown-item {
     display: block;
@@ -86,10 +82,11 @@
     pointer-events: none;
     background-color: transparent; }
 
+/* ---------- */
 /* Create page in Admin */
+/* ---------- */
 .card{
-    width: 100%;
-}
+    width: 100%; }
 
 .btn {
     display: inline-block;
@@ -136,7 +133,9 @@
     background-color: #FF5757;
     border-color: #CC4545; }
 
+/* ---------- */
 /* Alert */
+/* ---------- */
 .alert{
     border-radius: 0.5rem;
     border-color: white;
@@ -160,5 +159,58 @@
 
 .user-panel p{
     float: right;
-    margin-right: 125px;
-}
+    margin-right: 115px; }
+
+.search{
+    width: 400px; }
+.search-btn{
+    float: right; }
+
+/* ---------- */
+/* Search form */
+/* ---------- */
+form .inner-form {
+    background: #fff;
+    display: flex;
+    width: 45%;
+    margin: 20px 0 20px 0;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -ms-flex-align: center;
+    align-items: center;
+    box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.15);
+    border-radius: 8px; }
+form .inner-form .input-field {
+    height: 55px; }
+form .inner-form .input-field input {
+    height: 100%;
+    background: transparent;
+    border: 0;
+    display: block;
+    width: 100%;
+    padding: 10px 40px;
+    font-size: 16px;
+    color: #555; }
+form .inner-form .input-field input.placeholder {
+    color: #888;
+    font-size: 16px; }
+
+form .inner-form .input-field.third-wrap .btn-search {
+    height: 100%;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    width: 70px;
+    white-space: nowrap;
+    color: #fff;
+    border: 0;
+    cursor: pointer;
+    background: #375390;
+    transition: all .2s ease-out, color .2s ease-out; }
+form .inner-form .input-field.third-wrap .btn-search svg {
+    width: 16px; }
+form .inner-form .input-field.third-wrap .btn-search:hover {
+    background: #375370; }
+form .inner-form .input-field.third-wrap .btn-search:focus {
+    outline: 0;
+    box-shadow: none; }
+

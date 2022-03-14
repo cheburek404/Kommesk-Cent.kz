@@ -7,8 +7,7 @@ use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Auth;
 
-class LoginController extends Controller
-{
+class LoginController extends Controller {
     /*
     |--------------------------------------------------------------------------
     | Login Controller
@@ -29,10 +28,11 @@ class LoginController extends Controller
      */
     //protected $redirectTo = RouteServiceProvider::HOME;
     protected function authenticated() {
-        if(Auth::user()->role_as == '1') {  //1 = Admin Login
+        if(Auth::user()->role_as == 'super_admin') {  // Super-Admin Login
             return redirect('dashboard')->with('status','Welcome to your dashboard');
-        }
-        elseif(Auth::user()->role_as == '0') {  // Normal or Default User Login
+        } elseif(Auth::user()->role_as == 'admin') {  // Admin Login
+            return redirect('dashboard')->with('status','Welcome to your dashboard');
+        } else {  // Normal or Default User Login
             return redirect('/')->with('status','Logged in successfully');
         }
     }
