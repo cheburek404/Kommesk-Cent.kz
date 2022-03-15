@@ -49,6 +49,9 @@
                         @endforeach
                         </tbody>
                     </table>
+                    <div class="d-flex justify-content-center mt-3">
+                        {!! $product->links('pagination-links') !!}
+                    </div>
                     <div class="modal fade" id="smallModal" tabindex="-1" role="dialog" aria-labelledby="smallModalLabel" aria-hidden="true"  style="border-radius: 10px">
                         <div class="modal-dialog modal-sm" role="document">
                             <div class="modal-content">

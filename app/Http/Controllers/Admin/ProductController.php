@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Storage;
 
 class   ProductController extends Controller {
     public function index(){
-        $product = Product::all();
+        $product = Product::paginate(7);
         $category = Category::all();
         $order = Order::all();
         return view('admin.product.index', compact('product', 'category','order'));

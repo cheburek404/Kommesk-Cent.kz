@@ -54,10 +54,14 @@ Route::middleware(['auth', 'isAdmin'])->group(function(){
     Route::get('add-order', [OrderController::class, 'add']);
     Route::post('insert-order', [OrderController::class, 'insert']);
 
-    //Access for admins
+    //Access to admin panel
     Route::get('access', [FrontendController::class, 'indexForAccess']);
     Route::get('search', [FrontendController::class, 'searchByEmail']);
     Route::get('give-access/{id}', [FrontendController::class, 'giveAccessForAdmin']);
     Route::put('change-role/{id}', [FrontendController::class, 'changeRole']);
 
 });
+
+//Выводить админов и добавлить им их продукты
+//Супер-Админ через админ панель должжен добавлять определенные поля для заказа
+//Исправить поисковик в Access for admins

@@ -6,13 +6,9 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0">All users</h1>
+                        <h1 class="mb-2">All users</h1>
                     </div>
                 </div>
-                {{--<form action="{{ url('search') }}" method="GET">
-                    <input type="text" class="form-control search" name="search" placeholder="Search by email" required/>
-                    <button class="btn btn-primary search-btn" type="submit">Search</button>
-                </form>--}}
                 <form action="{{ url('search') }}" method="GET">
                     <div class="inner-form">
                         <div class="input-field second-wrap">
@@ -27,14 +23,9 @@
                         </div>
                     </div>
                 </form>
-                @if(session('success'))
-                    <div class="alert alert-success" role="alert">
-                        <h4>{{ session('success') }}</h4>
-                    </div>
-                @endif
             </div>
         </div>
-        <section class="content">
+        <section class="content mt-2">
             <div class="card">
                 <div class="card-body p-0" style="display: block;">
                     <table class="table table-hover table-striped projects">
