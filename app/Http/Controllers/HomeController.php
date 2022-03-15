@@ -22,7 +22,7 @@ class HomeController extends Controller {
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index() {
-        $featured_products = Product::all();
+        $featured_products = Product::paginate(8);
         $category = Category::all();
         return view('user.home', compact('featured_products','category'));
     }

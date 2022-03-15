@@ -19,7 +19,7 @@
         <section class="content">
             <div class="card">
                 <div class="card-body p-0" style="display: block;">
-                    <table class="table table-striped projects">
+                    <table class="table table-hover table-striped projects">
                         <thead>
                         <tr>
                             <th style="width: 1%">ID</th>
@@ -45,6 +45,13 @@
                             </tr>
                         @endforeach
                         </tbody>
+                        <tfoot>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        </tfoot>
                     </table>
                     <div class="modal fade" id="smallModal" tabindex="-1" role="dialog" aria-labelledby="smallModalLabel" aria-hidden="true"  style="border-radius: 10px">
                         <div class="modal-dialog modal-sm" role="document">

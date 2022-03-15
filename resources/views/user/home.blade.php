@@ -40,6 +40,9 @@
                         </div>
                         @endforeach
                     </div>
+                    {{--<div class="d-flex justify-content-center mt-3">
+                        {!! $featured_products->links('user.pagination-links') !!}
+                    </div>--}}
                     {{--<p id="nextlink"><a href="javascript:void(0);" onclick="showmore(8,$(&quot;#thisget&quot;).val())">показать еще</a><input type="hidden" id="thisget" value=""></p>--}}
                 </div>
             </div>

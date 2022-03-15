@@ -218,3 +218,23 @@ form .inner-form .input-field.third-wrap .btn-search:focus {
     outline: 0;
     box-shadow: none; }
 
+
+/* ---------- */
+/* Pagination pages */
+/* ---------- */
+.pages{
+    margin: 0 0 15px 0; }
+.pages .btn{
+    font-size: 16px;
+    border: none;
+    background-color: #d9d9d9; }
+.pages .btn:hover{
+    background-color: #B9B9B9; }
+.pages .element{
+    color: white;
+    background-color: #5884CC; }
+.pages .element:hover{
+    background-color: #5884CC; }
+.pages .next{
+    float: right; }
+
